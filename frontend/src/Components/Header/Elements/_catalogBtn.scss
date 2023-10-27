@@ -1,12 +1,29 @@
-.catalog-btn {
-    background-color: #393;
-    padding: 0.7rem 1.4rem;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 700;
-    margin-right: auto;
+@import "../../../styles/utils/mixins";
 
-    &:hover {
-      color: #fff !important;
-    }
+.catalog-btn {
+  background-color: #393;
+  padding: 0.7rem 1.4rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-right: auto;
+
+  @include medium-screen {
+    display: none;
   }
+
+  &:hover {
+    color: #fff !important;
+  }
+}
+
+.menu-content {
+  .catalog-btn {
+
+    align-self: center;
+
+    display: block;
+    font-size: 1.5rem;
+    margin-right: 0;
+  }
+}

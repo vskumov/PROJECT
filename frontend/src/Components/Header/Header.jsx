@@ -1,21 +1,37 @@
+import React, { useState } from "react";
+import CatalogBtn from "./Elements/CatalogBtn";
 import Menu from "./Elements/Menu";
 import Logo from "./Elements/Logo";
 import CartIcon from "./Elements/CartIcon";
-import CatalogBtn from "./Elements/CatalogBtn";
+import BurgerMenu from "./Elements/BurgerMenu";
+import BurgerIcon from "./Elements/BurgerIcon";
 
 import "./_header.scss";
 
- //TODO Роза: сделать бургерное меню для мобильной версии
+const Header = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
-function Header() {
+  const handleMenuToggle = () => {
+    setMenuOpen((prevState) => !prevState);
+  };
+
+  const handleBurgerMenuClose = () => {
+    setMenuOpen(false);
+  };
+
   return (
-    <header className="container">
-      <Logo />
-      <CatalogBtn />
-      <Menu />
-      <CartIcon />
-    </header>
+    <>
+      <header className="container">
+        <Logo />
+        <CatalogBtn />
+        <Menu />
+        <CartIcon />
+        <BurgerIcon onMenuToggle={handleMenuToggle} />
+      </header>
+
+      <BurgerMenu isMenuOpen={isMenuOpen} onClose={handleBurgerMenuClose} />
+    </>
   );
-}
+};
 
 export default Header;

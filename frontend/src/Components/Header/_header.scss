@@ -12,7 +12,7 @@ header {
     list-style-type: none;
 
     @include flex($justify: space-around);
-    @include small-screen {
+    @include medium-screen {
       display: none;
     }
   }

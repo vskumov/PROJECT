@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
 
-const Menu = () => {
+const Menu = ({ onLinkClick }) => {
   return (
     <nav>
       <ul>
         <li>
-          <Link to="/">Main Page</Link>
+          <Link to="/" onClick={onLinkClick}>Main Page</Link>
         </li>
         <li>
-          <Link to="/products">All Products</Link>
+          <Link to="/products" onClick={onLinkClick}>All Products</Link>
         </li>
         <li>
-          <Link to="/sales">Sales</Link>
+          <Link to="/sales" onClick={onLinkClick}>Sales</Link>
         </li>
       </ul>
     </nav>
