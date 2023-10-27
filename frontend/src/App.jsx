@@ -5,13 +5,13 @@ import Header from "./Components/Header/Header";
 import Main from "./Components/Main/Main";
 import Footer from "./Components/Footer/Footer";
 import Cart from "./Components/Main/Cart/Cart";
-import Catalog from "./Components/Main/Catalog";
+import Catalog from "./Components/Main/Catalog/Catalog";
 import CategoryPage from "./Components/Main/Catalog/CategoryPage";
-import Products from "./Components/Main/Products";
+import Products from "./Components/Main/Products/Products";
 import ProductPage from "./Components/Main/Products/ProductPage";
-import Sales from "./Components/Main/Sales";
-import Page404 from "./Components/Main/Page404";
+import Sales from "./Components/Main/Catalog/Sales";
 import NavigationWrapper from "./Components/NavigationWrapper";
+import Page404 from "./Components/Main/Elements/Page404";
 
 function App() {
   return (

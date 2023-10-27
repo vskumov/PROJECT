@@ -6,6 +6,7 @@ import { addItem } from "../../../actions/cartActions";
 import AddToCartButton from "./AddToCartButton";
 
 import "./_product.scss";
+import { goToProduct, handleKeyPress } from "../../../utils/cardsUtils";
 
 function ProductCard({
   product,
@@ -14,24 +15,12 @@ function ProductCard({
   image,
   discont_price,
   id,
-  quantity,
 }) {
   const discountPercentage = Math.round(
     ((price - discont_price) / price) * 100
   );
 
   const navigate = useNavigate();
-
-  const goToProduct = () => {
-    navigate(`/products/${id}`);
-  };
-
-  const handleKeyPress = (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      goToProduct();
-    }
-  };
-
   const dispatch = useDispatch();
 
   function handleAddToCart(event) {
@@ -44,8 +33,8 @@ function ProductCard({
     <div className="product-box">
       <article
         className="product-card"
-        onClick={goToProduct}
-        onKeyDown={handleKeyPress}
+        onClick={() => goToProduct(navigate, id)}
+        onKeyDown={(event) => handleKeyPress(event, navigate, id)}
         role="button"
         tabIndex="0"
       >

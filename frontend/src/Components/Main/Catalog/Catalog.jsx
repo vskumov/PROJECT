@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import CategoryList from "./Catalog/CategoryList";
-import PageTitle from "./Elements/PageTitle";
+import CategoryList from "./CategoryList";
+import PageTitle from "../Elements/PageTitle";
 
 function Catalog() {
   useEffect(() => {
@@ -9,7 +9,7 @@ function Catalog() {
 
   return (
     <main className="container showcase">
-      <PageTitle title="Catalo" />
+      <PageTitle title="Catalog" />
       <CategoryList />
     </main>
   );

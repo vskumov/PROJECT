@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../../actions/productActions";
 
-import Page404 from "../Page404";
 import Loading from "../Elements/Loading";
 import ProductTitle from "./Elements/ProductTitle";
 import ProductImage from "./Elements/ProductImage";
@@ -13,15 +12,16 @@ import ProductButton from "./Elements/ProductButton";
 
 import "./_productPage.scss";
 import "../../../styles/_decoration.scss";
+import Page404 from "../Elements/Page404";
 
 function ProductPage() {
-  const products = useSelector((state) => state.products.products);
-  const cartList = useSelector((state) => state.cart.cartList);
-
   const dispatch = useDispatch();
   const { id } = useParams();
-
   const [isLoading, setIsLoading] = useState(true);
+  const products = useSelector((state) => state.products.products);
+  const cartList = useSelector((state) => state.cart.cartList);
+  const thisProduct = products.find((product) => product.id === +id);
+  const thisProductInCart = cartList.find((product) => product.id === +id);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -33,9 +33,6 @@ function ProductPage() {
   if (isLoading) {
     return <Loading />;
   }
-
-  const thisProduct = products.find((product) => product.id === +id);
-  const thisProductInCart = cartList.find((product) => product.id === +id);
 
   if (!thisProduct) {
     return <Page404 />;

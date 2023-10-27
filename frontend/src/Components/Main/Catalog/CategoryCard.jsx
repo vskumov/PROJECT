@@ -1,23 +1,14 @@
 import { useNavigate } from "react-router-dom";
+import { goToCategory, handleKeyPress } from "../../../utils/cardsUtils";
 
 function CategoryCard({ category }) {
   const navigate = useNavigate();
-
-  const goToCategory = () => {
-    navigate(`/categories/${category.id}`);
-  };
-
-  const handleKeyPress = (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      goToCategory();
-    }
-  };
-
+  
   return (
     <article
       className="category-card"
-      onClick={goToCategory}
-      onKeyDown={handleKeyPress}
+      onClick={() => goToCategory(navigate, category.id)}
+      onKeyDown={(event) => handleKeyPress(event, navigate, category.id)}
       role="button"
       tabIndex="0"
     >

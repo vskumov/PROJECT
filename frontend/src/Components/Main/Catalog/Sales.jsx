@@ -1,6 +1,6 @@
-import SortingMenu from "./Catalog/SortingMenu";
-import PageTitle from "./Elements/PageTitle";
-import ProductList from "./Products/ProductList";
+import PageTitle from "../Elements/PageTitle";
+import SortingMenu from "../Elements/SortingMenu/SortingMenu";
+import ProductList from "../Products/ProductList";
 
 function Sales() {
   return (

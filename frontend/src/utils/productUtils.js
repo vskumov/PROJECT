@@ -61,29 +61,3 @@ export const filterAndSortProducts = (initialProducts, sortParams, categoryId, d
 
   return products;
 };
-
-
-
-// if (sortParams.priceFrom) {
-//   // products = products.filter((product) => product.price >= sortParams.priceFrom);
-
-//   // products = products.filter((product) => (product.discont_price
-//   //   ? product.discont_price
-//   //   : product.price) >= sortParams.priceFrom);
-
-//   products = products.filter((product) => {
-//     const price = product.discont_price !== null
-//       ? product.discont_price
-//       : product.price;
-//     return price >= sortParams.priceFrom;
-//   });
-// }
-
-// if (sortParams.priceTo) {
-//   products = products.filter((product) => {
-//     const price = product.discont_price !== null
-//       ? product.discont_price
-//       : product.price;
-//     return price <= sortParams.priceTo
-//   });
-// }

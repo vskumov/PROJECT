@@ -1,5 +1,5 @@
-import succulent from "../../img/succulent3.png";
-import "./_noPage.scss";
+import succulent from "../../../img/succulent3.png";
+import "./_page404.scss";
 
 function Page404() {
   return (
