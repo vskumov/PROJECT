@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+h2 {
+  font-size: 2.4rem;
+  margin-top: 3.5rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+h5 {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 2.2rem;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  &:hover {
+    color: #393;
+  }
+}
+
+// Product descriptions. See special styles, if not listed
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.price-l {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.price-xl {
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1;
+  &-currency {
+    font-size: 1rem;
+  }
+}
+
+.old-price {
+  font-size: 1rem;
+  color: #bbb;
+  font-weight: 500;
+  text-decoration: line-through;
+}
+
+.discont {
+  font-size: 1rem;
+  color: #ff32a1;
+  font-weight: 500;
+}
+
+.description-text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}

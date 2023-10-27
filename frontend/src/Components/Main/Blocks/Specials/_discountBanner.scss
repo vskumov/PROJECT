@@ -1,0 +1,125 @@
+@import "../../../../styles/utils/mixins";
+
+.discount-banner {
+  padding: 2.5rem 0;
+
+  display: grid;
+  align-items: start;
+
+  grid-template-columns: 1fr 1fr;
+
+  grid-template-areas:
+    "gnom text"
+    "gnom form";
+  gap: 2rem;
+
+  @include medium-screen {
+    padding: 2rem 0;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "text gnom"
+      "form form";
+  }
+
+  @include small-screen {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "gnom"
+      "text"
+      "form";
+    gap: 1rem;
+  }
+
+  &__img {
+    grid-area: gnom;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    @include small-screen {
+      min-height: 20vh;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+
+      @include medium-screen {
+        left: auto;
+        right: 0;
+        transform: scaleX(-1);
+      }
+
+      @include small-screen {
+        top: 0;
+        left: 0;
+        transform: none;
+      }
+    }
+  }
+
+  &__offer {
+    grid-area: text;
+
+    color: white;
+    font-weight: 700;
+
+    .offer-xxxl {
+      display: block;
+      font-size: 5rem;
+
+      @include medium-screen {
+        font-size: 4rem;
+      }
+    }
+
+    .offer-xl {
+      font-size: 2.5rem;
+      @include medium-screen {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  form {
+    grid-area: form;
+
+    @include flex($direction: column, $justify: space-around, $gap: 1rem);
+  }
+
+  .discount-success {
+    grid-area: form;
+  }
+
+  input {
+    padding: 0.7rem;
+    border: 1px solid gray;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 1px #393;
+    }
+
+    &::placeholder {
+      color: lightgray;
+      font-size: 1.3rem;
+    }
+  }
+
+  button {
+    padding: 0.7rem;
+    border: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+  }
+}

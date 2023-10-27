@@ -1,0 +1,18 @@
+@import "../../../../styles/utils/mixins";
+
+.empty-cart {
+  grid-column: 1 / -1;
+
+  min-height: 30vh;
+  max-height: 50vh;
+
+  @include flex($align: center, $justify: center);
+  height: 100%;
+  padding: 1rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+
+  h3 {
+    color: gray;
+  }
+}

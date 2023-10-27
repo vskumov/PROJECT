@@ -1,0 +1,21 @@
+@import "./styles/utils/mixins";
+@import "./styles/utils/variables";
+
+@import "./styles/container";
+@import "./styles/typography";
+@import "./styles/buttons";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+input,
+select {
+  border-radius: 0.4rem;
+}

@@ -1,0 +1,75 @@
+@import "../../../styles/utils/mixins";
+
+.prod-page {
+  width: 100%;
+
+  @include flex($justify: space-between, $align: center, $gap: 0.5rem);
+
+  font-size: 1rem;
+  line-height: 3rem;
+  border: 2px solid #393;
+  background-color: #f1fff1;
+  color: #393;
+  border-radius: 0.4rem;
+
+  &:hover {
+    box-shadow: rgba(80, 80, 95, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
+
+  button {
+    width: 30%;
+    border: 0;
+    box-shadow: none !important;
+    background-color: #f1fff1;
+    color: #393;
+    font-size: 1.2rem;
+    line-height: 3rem;
+  }
+
+  .plus {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .minus {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.in-cart {
+  width: 100px;
+
+  @include flex($justify: space-between, $align: center, $gap: 0);
+
+  border: 1px solid gray;
+  border-radius: 0.4rem;
+
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: black;
+
+  &:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
+
+  button {
+    width: 30%;
+    border: 0;
+    box-shadow: none !important;
+    background-color: transparent;
+    color: black;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+
+  .plus {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .minus {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

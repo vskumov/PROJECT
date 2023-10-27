@@ -1,0 +1,30 @@
+@import "../../styles/utils/mixins";
+
+.no-page {
+  height: 80vh;
+
+  @include flex($direction: column, $justify: center, $align: center);
+
+  &-404 {
+    @include flex($justify: space-around, $align: center);
+
+    font-size: 15rem;
+    @include small-screen {
+      font-size: 7rem;
+    }
+
+    img {
+      width: 100%;
+      max-width: 13rem;
+
+      @include small-screen {
+        max-width: 7rem;
+      }
+    }
+  }
+
+  &-txt {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}

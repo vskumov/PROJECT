@@ -1,0 +1,23 @@
+@import "../../styles/utils/mixins";
+
+header {
+  @include flex($align: center, $gap: 4rem);
+  height: 100px;
+
+  @include small-screen {
+    gap: 2.5rem;
+  }
+
+  ul {
+    list-style-type: none;
+
+    @include flex($justify: space-around);
+    @include small-screen {
+      display: none;
+    }
+  }
+}
+
+.logo {
+  height: 56px;
+}

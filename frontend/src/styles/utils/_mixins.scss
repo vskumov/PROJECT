@@ -1,0 +1,50 @@
+@mixin x-large {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin big-screen {
+  @media (min-width: 992px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin medium-screen {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin small-screen {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin x-small {
+  @media (max-width: 575px) {
+    @content;
+  }
+}
+
+@mixin flex(
+  $direction: normal,
+  $justify: space-between,
+  $align: normal,
+  $gap: 2rem,
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+// @mixin border-radius($value, $clr: green){
+//     border-radius: $value;
+//     -webkit-border-radius: $value;
+//     -moz-border-radius: $value;
+//     -ms-border-radius: $value;
+//     color: $clr;
+// }

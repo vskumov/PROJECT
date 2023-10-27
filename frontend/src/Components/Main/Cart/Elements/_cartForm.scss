@@ -1,0 +1,28 @@
+.details-form {
+  @include flex($direction: column, $justify: space-around, $gap: 0.5rem);
+
+  input {
+    padding: 0.7rem;
+    border: 1px solid gray;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 1px #393;
+    }
+
+    &::placeholder {
+      color: lightgray;
+      font-size: 1.2rem;
+    }
+  }
+
+  button {
+    padding: 0.5rem;
+    border: 0;
+    font-size: 1rem;
+    background-color: #393;
+    color: white;
+  }
+}

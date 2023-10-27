@@ -1,0 +1,73 @@
+@import "../../../../styles/utils/mixins";
+
+.product-in-cart {
+  @include flex($justify: space-between, $gap: 1.5rem);
+
+  padding: 1rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+
+  position: relative;
+
+  @include small-screen {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  &__img {
+    width: 200px;
+    aspect-ratio: 1/1;
+    line-height: 1;
+
+    @include small-screen {
+      max-width: 150px;
+    }
+
+    img {
+      width: 100%;
+
+      border-radius: 0.4rem;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    width: 100%;
+
+    @include flex($direction: column, $justify: space-between, $gap: 0);
+
+    h3 {
+      max-width: 70%;
+
+      @include small-screen {
+        margin: 1rem 0 2rem 0;
+        max-width: 100%;
+      }
+    }
+
+    &-price-and-options {
+      @include flex($justify: space-between, $align: flex-end, $gap: 1rem);
+    }
+
+    .totalprice {
+      @include flex(
+        $direction: column,
+        $justify: space-between,
+        $align: flex-end,
+        $gap: 0.5rem
+      );
+
+      &-now {
+        font-size: 2rem;
+        font-weight: 400;
+      }
+
+      &-before {
+        font-size: 1rem;
+        font-weight: 400;
+        color: lightgray;
+        text-decoration: line-through;
+      }
+    }
+  }
+}

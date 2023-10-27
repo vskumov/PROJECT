@@ -1,0 +1,81 @@
+@import "../../../styles/utils/mixins";
+
+.sorting-menu {
+  grid-column: 1 / -1;
+
+  @include flex($justify: flex-start, $align: center);
+  flex-wrap: wrap;
+  font-size: 1.2rem;
+
+  @include medium-screen {
+    margin-bottom: 2rem;
+  }
+
+  @include small-screen {
+    @include flex($gap: 1rem);
+    font-size: 1rem;
+  }
+
+  &__param {
+    @include flex($justify: space-around, $align: center, $gap: 0.5rem);
+
+    input {
+      padding: 0.5rem;
+      max-width: 5rem;
+      border: 1px solid gray;
+      font-size: 1.2rem;
+      line-height: 1rem;
+
+      @include small-screen {
+        max-width: 4rem;
+      }
+
+      &::placeholder {
+        color: lightgray;
+        font-size: 1rem;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 1px #393;
+      }
+    }
+
+    select {
+      padding: 0.5rem;
+      border: 1px solid gray;
+      font-size: 1.2rem;
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 1px #393;
+      }
+    }
+
+    label,
+    .label {
+      margin-right: 0.5rem;
+    }
+
+    input[type="checkbox"] {
+      appearance: none;
+      width: 2.5rem;
+      height: 2.5rem;
+      border: 1px solid gray;
+
+      cursor: pointer;
+
+      &:checked::before {
+        content: "\2713";
+        display: inline-block;
+        text-align: center;
+        font-size: 3rem;
+        color: #393;
+      }
+
+      &:disabled::before {
+        color: gray;
+      }
+    }
+  }
+}

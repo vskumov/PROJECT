@@ -1,0 +1,70 @@
+@import "../../../styles/utils/mixins";
+
+.product-box {
+  .img-container {
+    position: relative;
+  }
+
+  .add-btn {
+    border: 2px solid #393;
+    background-color: #f1fff1;
+    color: #393;
+
+    width: 90%;
+    display: none;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .prod-card {
+    width: 90%;
+    display: none;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &:hover {
+    .add-btn {
+      display: block;
+    }
+    .prod-card {
+      display: block;
+    }
+  }
+}
+
+.product-card {
+  @include flex($direction: column, $justify: flex-start, $gap: 0.5rem);
+
+  cursor: pointer;
+
+  &__img {
+    img {
+      object-fit: cover;
+      aspect-ratio: 1/1;
+      width: 100%;
+      border-radius: 0.4rem;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  &__price {
+    @include flex($justify: space-between, $align: center, $gap: 0.5rem);
+  }
+
+  .currency {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  &:hover {
+    img {
+      transition: transform 0.3s ease-in-out;
+      transform: scale(1.03);
+    }
+  }
+}

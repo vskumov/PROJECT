@@ -1,0 +1,71 @@
+@import "../../styles/utils/mixins";
+
+.contacts {
+  width: 100%;
+
+  @include flex($justify: space-around, $gap: 1rem);
+  @include small-screen {
+    flex-direction: column;
+  }
+
+  &__calls {
+    width: 100%;
+    @include flex($direction: column, $justify: space-around, $gap: 2rem);
+
+    .phone {
+      font-size: 3rem;
+      line-height: 3rem;
+      @include medium-screen {
+        font-size: 2rem;
+        line-height: 2rem;
+      }
+    }
+  }
+
+  &__local {
+    width: 100%;
+    @include flex(
+      $direction: column,
+      $justify: flex-start,
+      $align: top,
+      $gap: 2rem
+    );
+
+    .address {
+      font-size: 1.5rem;
+      line-height: 1.2;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+
+    .hours {
+      font-size: 1rem;
+
+      &-info {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.sm-list {
+  @include flex($justify: left, $gap: 1rem);
+}
+
+.sm-btn {
+  @include flex($direction: column, $justify: space-around);
+  text-align: center;
+  max-width: min-content;
+  aspect-ratio: 1/1;
+
+  &__lab {
+    font-size: 2.2rem;
+  }
+
+  &__txt {
+    font-size: 0.8rem;
+  }
+}

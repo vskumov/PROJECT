@@ -1,0 +1,30 @@
+@import "../../styles/utils/mixins";
+
+.cart-icon {
+  font-size: 1.6rem;
+  color: black;
+  position: relative;
+
+  &:hover {
+    color: #393;
+  }
+
+  .cart-quantity {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: 50%;
+    top: -0.5rem;
+    right: -0.5rem;
+
+    width: 1.3rem;
+    height: 1.3rem;
+
+    @include flex($justify: center, $align: center, $gap: 0);
+
+    font-size: 0.6rem;
+    background-color: #393;
+    color: white;
+  }
+}

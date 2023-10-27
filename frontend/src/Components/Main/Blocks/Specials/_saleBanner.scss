@@ -1,0 +1,73 @@
+@import "../../../../styles/utils/mixins";
+
+.banner-sale {
+  padding: 4rem 0;
+  height: 600px;
+  height: min-content;
+
+  background-color: #a1e2eb;
+  color: white;
+
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+
+    @include medium-screen {
+      top: 70%;
+      left: 70%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @include medium-screen {
+    padding: 2rem 0;
+    height: 500px;
+  }
+
+  @include small-screen {
+    padding: 1rem 0;
+    height: 60vh;
+  }
+
+  .sale {
+    display: flex;
+    justify-content: space-between;
+
+    &-offer {
+      &-xxxl {
+        display: block;
+        font-size: 4.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      &-xl {
+        display: block;
+
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      &-button {
+        display: block;
+        max-width: max-content;
+
+        padding: 0.7rem 1.4rem;
+        border: 0;
+        background-color: white;
+        color: #333;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-top: 3rem;
+      }
+    }
+  }
+}

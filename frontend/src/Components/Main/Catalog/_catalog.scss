@@ -1,0 +1,55 @@
+@import "../../../styles/utils/mixins";
+
+.showcase {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  grid-auto-rows: 1fr;
+  gap: 2rem;
+
+  @include medium-screen {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include x-small {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  &__header {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5rem;
+
+  cursor: pointer;
+
+  &__img {
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 0.5rem;
+
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  &__txt {
+    font-size: 1rem;
+    line-height: 2rem;
+    font-weight: 600;
+  }
+}

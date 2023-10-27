@@ -1,0 +1,11 @@
+.dashed-line {
+    border: 0;
+    height: 1px;
+    background: repeating-linear-gradient(
+      to right,
+      #c0c0c0,
+      #c0c0c0 10px,
+      #fff 10px,
+      #fff 20px
+    );
+  }
