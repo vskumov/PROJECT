@@ -10,11 +10,12 @@
 
   &__calls {
     width: 100%;
-    @include flex($direction: column, $justify: space-around, $gap: 2rem);
+    @include flex($direction: column, $justify: space-around, $gap: 1.5rem);
 
     .phone {
       font-size: 3rem;
       line-height: 3rem;
+
       @include medium-screen {
         font-size: 2rem;
         line-height: 2rem;
@@ -28,7 +29,7 @@
       $direction: column,
       $justify: flex-start,
       $align: top,
-      $gap: 2rem
+      $gap: 1.5rem
     );
 
     .address {

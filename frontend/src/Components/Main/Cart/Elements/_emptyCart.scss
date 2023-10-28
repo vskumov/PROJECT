@@ -3,7 +3,7 @@
 .empty-cart {
   grid-column: 1 / -1;
 
-  min-height: 30vh;
+  min-height: 40vh;
   max-height: 50vh;
 
   @include flex($align: center, $justify: center);
