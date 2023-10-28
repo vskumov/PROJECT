@@ -1,14 +1,14 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setDiscount } from "../../../../actions/cartActions";
+
 import InputMask from "react-input-mask";
+import DiscountSuccessMessage from "./DiscountSuccessMessage";
 
 import gnom from "../../../../img/gnom.png";
 
 import "./_discountBanner.scss";
 import "./_specials.scss";
-
-import DiscountSuccessMessage from "./DiscountSuccessMessage";
-import { useDispatch, useSelector } from "react-redux";
-import { setDiscount } from "../../../../actions/cartActions";
 
 function DiscountBanner() {
   const [phone, setPhone] = useState("");
@@ -18,9 +18,11 @@ function DiscountBanner() {
   const hasDiscount = useSelector((state) => state.cart.hasDiscount);
 
   const dispatch = useDispatch();
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleInputChange = (e) => {
     setPhone(e.target.value);
+    setShowAlert(false);
   };
 
   const handleFormSubmit = (e) => {
@@ -29,6 +31,11 @@ function DiscountBanner() {
   };
 
   const sendDiscountRequest = () => {
+    if (phone.includes("_")) {
+      setShowAlert(true);
+      return;
+    }
+
     fetch("http://localhost:3333/sale/send", {
       method: "POST",
       headers: {
@@ -75,15 +82,22 @@ function DiscountBanner() {
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <InputMask
+                  maskChar={"_"}
                   mask="+4\9 99 999 999 99"
                   value={phone}
                   onChange={handleInputChange}
                   name="phone-in-discount"
                   id="phone-in-discount"
-                  required
                   placeholder="Enter your phone number"
+                  required
                 />
-                <button type="submit">Get Discount</button>
+                {showAlert ? (
+                  <span className="alert">
+                    Please enter the full phone number.
+                  </span>
+                ) : (
+                  <button type="submit">Get Discount</button>
+                )}
               </form>
             )}
           </>
@@ -94,4 +108,3 @@ function DiscountBanner() {
 }
 
 export default DiscountBanner;
-
