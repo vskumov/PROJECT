@@ -1,7 +1,7 @@
 import Menu from "./Menu";
 import CatalogBtn from "./CatalogBtn";
+
 import "./_burgerMenu.scss";
-import { Link } from "react-router-dom";
 
 const BurgerMenu = ({ isMenuOpen, onClose }) => {
   return (
@@ -12,11 +12,6 @@ const BurgerMenu = ({ isMenuOpen, onClose }) => {
           <CatalogBtn onLinkClick={onClose} />
         </div>
       )}
-      <span className="menu-close">
-        <Link to="#" onClick={onClose}>
-          <i className="las la-times"></i>
-        </Link>
-      </span>
     </div>
   );
 };

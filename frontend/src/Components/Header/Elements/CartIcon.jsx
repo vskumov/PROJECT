@@ -7,14 +7,12 @@ function CartIcon() {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
   return (
-    <div>
-      <Link to="/cart" className="cart-icon">
-        <i className="las la-shopping-bag"></i>
-        {totalQuantity > 0 && (
-          <div className="cart-quantity">{totalQuantity}</div>
-        )}
-      </Link>
-    </div>
+    <Link to="/cart" className="cart-icon">
+      <i className="las la-shopping-bag"></i>
+      {totalQuantity > 0 && (
+        <div className="cart-quantity">{totalQuantity}</div>
+      )}
+    </Link>
   );
 }
 

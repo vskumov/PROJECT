@@ -1,12 +1,12 @@
 @import "../../../styles/utils/mixins";
 
 .catalog-btn {
+  margin-right: auto;
   background-color: #393;
   padding: 0.7rem 1.4rem;
-  color: #fff;
   font-size: 1rem;
   font-weight: 700;
-  margin-right: auto;
+  color: #fff;
 
   @include medium-screen {
     display: none;
@@ -19,11 +19,9 @@
 
 .menu-content {
   .catalog-btn {
-
-    align-self: center;
-
     display: block;
-    font-size: 1.5rem;
     margin-right: 0;
+    align-self: center;
+    font-size: 1.5rem;
   }
 }

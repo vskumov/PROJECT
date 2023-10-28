@@ -1,9 +1,13 @@
-import './_burgerIcon.scss';
+import "./_burgerIcon.scss";
 
-const BurgerIcon = ({ onMenuToggle }) => {
+const BurgerIcon = ({ onMenuToggle, isMenuOpen }) => {
   return (
     <div className="burger-icon" onClick={onMenuToggle}>
-      <i className="las la-bars"></i>
+      {isMenuOpen ? (
+        <i className="las la-times"></i>
+      ) : (
+        <i className="las la-bars"></i>
+      )}
     </div>
   );
 };

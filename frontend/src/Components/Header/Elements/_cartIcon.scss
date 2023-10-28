@@ -1,12 +1,16 @@
 @import "../../../styles/utils/mixins";
 
 .cart-icon {
+  position: relative;
   font-size: 1.6rem;
   color: black;
-  position: relative;
 
   &:hover {
     color: #393;
+  }
+
+  @include medium-screen {
+    margin-left: auto;
   }
 
   .cart-quantity {

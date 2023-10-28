@@ -9,9 +9,8 @@
   background-color: whitesmoke;
   visibility: hidden;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex($align: center, $justify: center);
+
   z-index: 10000;
   transform: translateX(100%);
   transition: transform 0.3s ease-out;
@@ -21,36 +20,18 @@
     height: 100%;
     padding: 2rem;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    @include flex($direction: column, $align: center, $justify: center);
 
     ul {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include flex($direction: column, $align: center);
 
       list-style-type: none;
       font-size: 3rem;
-      gap: 2rem;
 
       @include small-screen {
         font-size: 2rem;
-        gap: 2rem;
       }
     }
-  }
-  .menu-close {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-
-    font-size: 2rem;
-    color: #333;
-
-    cursor: pointer;
   }
 }
 

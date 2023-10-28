@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import CatalogBtn from "./Elements/CatalogBtn";
 import Menu from "./Elements/Menu";
 import Logo from "./Elements/Logo";
@@ -26,7 +26,7 @@ const Header = () => {
         <CatalogBtn />
         <Menu />
         <CartIcon />
-        <BurgerIcon onMenuToggle={handleMenuToggle} />
+        <BurgerIcon onMenuToggle={handleMenuToggle} isMenuOpen={isMenuOpen}/>
       </header>
 
       <BurgerMenu isMenuOpen={isMenuOpen} onClose={handleBurgerMenuClose} />
