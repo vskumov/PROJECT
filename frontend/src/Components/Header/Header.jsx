@@ -7,32 +7,13 @@ import BurgerIcon from "./Elements/BurgerIcon";
 import CatalogBtn from "./Elements/CatalogBtn";
 
 import "./_header.scss";
+import { makeHandleBurgerMenuClose, makeHandleMenuToggle } from "../../utils/burgerMenuUtils";
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
-  let scrollPosition = 0;
-
-  const handleMenuToggle = () => {
-    if (!isMenuOpen) {
-      scrollPosition = window.pageYOffset;
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollPosition}px`;
-    } else {
-      document.body.style.position = '';
-      document.body.style.top = '';
-      window.scrollTo(0, scrollPosition);
-    }
-
-    setMenuOpen((prevState) => !prevState);
-  };
-
-  const handleBurgerMenuClose = () => {
-    document.body.style.position = '';
-    document.body.style.top = '';
-    window.scrollTo(0, scrollPosition);
-    setMenuOpen(false);
-  };
+  const handleMenuToggle = makeHandleMenuToggle(isMenuOpen, setMenuOpen);
+  const handleBurgerMenuClose = makeHandleBurgerMenuClose(setMenuOpen);
 
   return (
     <>
