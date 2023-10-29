@@ -1,45 +1,61 @@
 @import "../../styles/utils/mixins";
 
 .contacts {
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "c-h2 a-h2"
+    "phone address"
+    "sm-list whours";
+  gap: 1rem 2rem;
 
-  @include flex($justify: space-around, $gap: 1rem);
   @include small-screen {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "c-h2"
+      "phone"
+      "sm-list"
+      "a-h2"
+      "address"
+      "whours";
+    gap: 1.5rem 1.5rem;
+  }
+
+  .c-h2 {
+    grid-area: c-h2;
+  }
+
+  .a-h2 {
+    grid-area: a-h2;
+  }
+
+  .calls-phone {
+    grid-area: phone;
+    font-size: 3rem;
+    line-height: 3rem;
+
+    @include medium-screen {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+  }
+
+  .address {
+    grid-area: address;
+    font-size: 1.5rem;
+    line-height: 1.2;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .working-hours {
+    grid-area: whours;
+
+    display: flex;
     flex-direction: column;
-  }
-
-  &__calls {
-    width: 100%;
-    @include flex($direction: column, $justify: space-around, $gap: 1.5rem);
-
-    .phone {
-      font-size: 3rem;
-      line-height: 3rem;
-
-      @include medium-screen {
-        font-size: 2rem;
-        line-height: 2rem;
-      }
-    }
-  }
-
-  &__local {
-    width: 100%;
-    @include flex(
-      $direction: column,
-      $justify: flex-start,
-      $align: top,
-      $gap: 1.5rem
-    );
-
-    .address {
-      font-size: 1.5rem;
-      line-height: 1.2;
-
-      a {
-        text-decoration: underline;
-      }
-    }
+    justify-content: flex-end;
 
     .hours {
       font-size: 1rem;
@@ -50,23 +66,23 @@
       }
     }
   }
-}
 
-.sm-list {
-  @include flex($justify: left, $gap: 1rem);
-}
-
-.sm-btn {
-  @include flex($direction: column, $justify: space-around);
-  text-align: center;
-  max-width: min-content;
-  aspect-ratio: 1/1;
-
-  &__lab {
-    font-size: 2.2rem;
+  .sm-list {
+    grid-area: sm-list;
+    @include flex($justify: left, $gap: 1rem);
   }
 
-  &__txt {
-    font-size: 0.8rem;
+  .sm-btn {
+    @include flex($direction: column, $justify: space-around);
+    text-align: center;
+    max-width: min-content;
+
+    &__lab {
+      font-size: 2.2rem;
+    }
+
+    &__txt {
+      font-size: 0.8rem;
+    }
   }
 }
