@@ -59,29 +59,3 @@ export const createOrder = (phoneNumber) => {
             });
     };
 };
-
-
-// export const createOrder = (phoneNumber) => {
-//     return (dispatch) => {
-//         fetch("http://localhost:3333/order/send", {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type": "application/json",
-//             },
-//             body: JSON.stringify({ phone: phoneNumber }),
-//         })
-//             .then((response) => response.json())
-//             .then((data) => {
-//                 if (data.status === "OK") {
-//                     window.scrollTo({ top: 0, behavior: "smooth" });
-//                     dispatch(resetAndShowModal());
-//                     dispatch(toggleModal(true));
-//                 } else {
-//                     console.error(data.message);
-//                 }
-//             })
-//             .catch((error) => {
-//                 console.error("Network error:", error);
-//             });
-//     };
-// };
