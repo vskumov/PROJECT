@@ -7,7 +7,7 @@ import PriceInput from "./PriceInput";
 import SortSelect from "./SortSelect";
 import SortCheckbox from "./SortCheckbox";
 
-function SortingMenu({ isHided }) {
+function SortingMenu({ isHidden }) {
   const dispatch = useDispatch();
   const sortParams = useSelector((state) => state.sort);
 
@@ -56,7 +56,7 @@ function SortingMenu({ isHided }) {
         handlePriceToChange={handlePriceToChange}
       />
       <SortCheckbox
-        isHided={isHided}
+        isHidden={isHidden}
         handleShowDiscountChange={handleShowDiscountChange}
       />
       <SortSelect handleSortTypeChange={handleSortTypeChange} />

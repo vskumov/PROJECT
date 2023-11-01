@@ -6,7 +6,7 @@ function Sales() {
   return (
     <main className="container showcase wmb">
       <PageTitle title="Sales" />
-      <SortingMenu isHided={true} />
+      <SortingMenu isHidden={true} />
       <ProductList discounted={true} />
     </main>
   );
